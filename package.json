@@ -1,0 +1,22 @@
+{
+  "name": "frontend-form",
+  "version": "1.0.0",
+  "description": "this project is for practising with forms/grid/flex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalamanderKrajza/frontend-form.git"
+  },
+  "author": "Aleksander Krysa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SalamanderKrajza/frontend-form/issues"
+  },
+  "homepage": "https://github.com/SalamanderKrajza/frontend-form#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
