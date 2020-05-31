@@ -32,7 +32,7 @@ html {
   background-position: center bottom;
   display: grid;
   grid-template-columns: 10px auto;
-  grid-template-rows: 40px repeat(10, 30px);
+  grid-template-rows: 40px repeat(6, 30px) 5px;
   grid-column-gap: 16px;
   grid-row-gap: 10px;
   height: 200px;
@@ -117,6 +117,29 @@ html {
 .right {
   position: relative; }
 
+.form__before-input {
+  position: absolute;
+  top: 20%;
+  margin-left: 8%;
+  font-family: montserrat;
+  font-weight: bold; }
+
+.form__after-input {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  margin-right: 8%;
+  font-family: montserrat;
+  font-weight: bold; }
+
+.form__text {
+  position: absolute;
+  top: 28%;
+  margin: 0 10%;
+  font-family: montserrat;
+  font-size: 16px;
+  font-weight: normal; }
+
 .form__input {
   width: 80%;
   position: absolute;
@@ -142,3 +165,6 @@ html {
   color: #f6f6f6;
   font-size: 16px;
   border-radius: 6px; }
+
+.form:valid .form__confirmation {
+  background: #2fa522; }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link href="html/w1q1.html" rel="import" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
   </head>
@@ -23,18 +24,25 @@
       <section class="right">
         <form action="" class="form">
           <label class="form__label">
-            <input type="text" class="form__input"/>
+            <span class="form__before-input">&lt;</span>
+            <input type="text" class="form__input" pattern="head" required />
+            <span class="form__after-input">&gt;</span>
+            <h2 class="form__text">
+              in this tag user defines website settings f.e. language, title,
+              styles etc.
+            </h2>
           </label>
-          <input class="form__confirmation" type="submit" value="NEXT"/>
+          <input class="form__confirmation" type="submit" value="NEXT" />
         </form>
       </section>
     </main>
     <script>
-      let myWeeks = document.querySelectorAll('.week')
+      //Navigation shit
+      let myWeeks = document.querySelectorAll(".week");
       if (myWeeks.length > 0) {
         //Hide all weeks
-        myWeeks.forEach(function(week){
-          week.classList.add('hidden')
+        myWeeks.forEach(function (week) {
+          week.classList.add("hidden");
         });
 
         //Then decide which should be shown
@@ -42,31 +50,29 @@
         let listStart = 0;
         let listEnd = 0;
         //Find start of the list
-        if (current__week>1) {
-          listStart = current__week-1;
-        }
-        else{
+        if (current__week > 1) {
+          listStart = current__week - 1;
+        } else {
           listStart = 1;
         }
-        
+
         //Find end of the list
-        if (listStart + 4 <= myWeeks.length){
-          listEnd = listStart+4;
-        }
-        else{
+        if (listStart + 4 <= myWeeks.length) {
+          listEnd = listStart + 4;
+        } else {
           listEnd = myWeeks.length;
         }
 
         //For testing
-        console.log(`We have list from ${listStart} to ${listEnd}`)
+        console.log(`We have list from ${listStart} to ${listEnd}`);
 
         //Show desired weeks
-        for (i = listStart-1; i<listEnd; i++){
-          myWeeks[i].classList.remove('hidden')
+        for (i = listStart - 1; i < listEnd; i++) {
+          myWeeks[i].classList.remove("hidden");
         }
 
         //Highlight current week
-        myWeeks[current__week-1].classList.add('week--current');
+        myWeeks[current__week - 1].classList.add("week--current");
       }
     </script>
   </body>
