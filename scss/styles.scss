@@ -1,4 +1,10 @@
+// Color pallete
 $bg-color: #564e41;
+$my-black: #202020;
+$my-white: #f6f6f6;
+$my-gray: #a6a6a6;
+$my-yellow: #c1c476;
+$my-green: #2fa522;
 
 html {
   box-sizing: border-box;
@@ -20,18 +26,29 @@ html {
 }
 
 .main {
-    width: 80%;
-    display: grid;
+  display: grid;
+  width: 80%;
+  @media (min-width: 950px) {
     grid-template-columns: 1fr 2fr;
   }
-  
-  .left {
-    height: 300px;
-    background: black;
+}
+
+.left {
+  background: $my-black;
+  background-image: url("../img/cat-640x426.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+  background-position: center bottom;
+  height: 200px;
+  @media (min-width: 950px) {
+    height: 555px;
   }
-  
-  .right {
-    height: 300px;
-    background: white;
+}
+
+.right {
+  background: $my-white;
+  height: 500px;
+  @media (min-width: 950px) {
+    height: 555px;
   }
-  
+}

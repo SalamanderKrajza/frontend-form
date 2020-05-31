@@ -15,14 +15,26 @@ html {
   height: 100%; }
 
 .main {
-  width: 80%;
   display: grid;
-  grid-template-columns: 1fr 2fr; }
+  width: 80%; }
+  @media (min-width: 950px) {
+    .main {
+      grid-template-columns: 1fr 2fr; } }
 
 .left {
-  height: 300px;
-  background: black; }
+  background: #202020;
+  background-image: url("../img/cat-640x426.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+  background-position: center bottom;
+  height: 200px; }
+  @media (min-width: 950px) {
+    .left {
+      height: 555px; } }
 
 .right {
-  height: 300px;
-  background: white; }
+  background: #f6f6f6;
+  height: 500px; }
+  @media (min-width: 950px) {
+    .right {
+      height: 555px; } }
