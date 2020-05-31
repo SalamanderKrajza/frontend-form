@@ -19,7 +19,8 @@ html {
   width: 80%; }
   @media (min-width: 950px) {
     .main {
-      grid-template-columns: 1fr 2fr; } }
+      grid-template-columns: minmax(280px, 1fr) 2fr;
+      width: 60%; } }
 
 .left {
   font-family: montserrat;
@@ -40,7 +41,7 @@ html {
   @media (min-width: 950px) {
     .left {
       height: 555px;
-      padding: 52px 0 0 52px; } }
+      padding: 36px 0 0 36px; } }
 
 .left__header {
   font-weight: 400;
