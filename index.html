@@ -12,19 +12,62 @@
       <section class="left">
         <h2 class="left__header">.week</h2>
         <div class="left__vertical-line"></div>
-        <div class="week week--current"><a class="week__link" href="">.week__one</a></div>
-        <div class="week"><a class="week__link" href="">.week__two</a></div>
-        <div class="week"><a class="week__link" href="">.week__three</a></div>
-        <div class="week"><a class="week__link" href="">.week__four</a></div>
-        <div class="week"><a class="week__link" href="">.week__five</a></div>
+        <a class="week__link" href=""><div class="week">.week__one</div></a>
+        <a class="week__link" href=""><div class="week">.week__two</div></a>
+        <a class="week__link" href=""><div class="week">.week__three</div></a>
+        <a class="week__link" href=""><div class="week">.week__four</div></a>
+        <a class="week__link" href=""><div class="week">.week__five</div></a>
+        <a class="week__link" href=""><div class="week">.week__six</div></a>
+        <a class="week__link" href=""><div class="week">.week__seven</div></a>
       </section>
       <section class="right">
         <form action="" class="form">
           <label class="form__label">
-            <input type="text" class="form__input">
+            <input type="text" class="form__input"/>
           </label>
+          <input class="form__confirmation" type="submit" value="NEXT"/>
         </form>
       </section>
     </main>
+    <script>
+      let myWeeks = document.querySelectorAll('.week')
+      if (myWeeks.length > 0) {
+        //Hide all weeks
+        myWeeks.forEach(function(week){
+          week.classList.add('hidden')
+        });
+
+        //Then decide which should be shown
+        let current__week = 2; // temporary. It will be replaced by queryString value
+        let listStart = 0;
+        let listEnd = 0;
+        //Find start of the list
+        if (current__week>1) {
+          listStart = current__week-1;
+        }
+        else{
+          listStart = 1;
+        }
+        
+        //Find end of the list
+        if (listStart + 4 <= myWeeks.length){
+          listEnd = listStart+4;
+        }
+        else{
+          listEnd = myWeeks.length;
+        }
+
+        //For testing
+        console.log(`We have list from ${listStart} to ${listEnd}`)
+
+        //Show desired weeks
+        for (i = listStart-1; i<listEnd; i++){
+          myWeeks[i].classList.remove('hidden')
+        }
+
+        //Highlight current week
+        myWeeks[current__week-1].classList.add('week--current');
+      }
+    </script>
   </body>
 </html>

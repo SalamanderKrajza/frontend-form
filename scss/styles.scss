@@ -51,12 +51,10 @@ html {
   grid-template-rows: 40px repeat(10, 30px);
   grid-column-gap: 16px;
   grid-row-gap: 10px;
-  
+
   height: 200px;
   padding: 16px;
-}
-@media (min-width: 950px) {
-  .left {
+  @media (min-width: 950px) {
     height: 555px;
     padding: 52px 0 0 52px;
   }
@@ -85,33 +83,100 @@ html {
   margin: -5px 0 0 10px;
   vertical-align: top;
   display: inline-block;
-  grid-area: 2 / 1 / span 10 / span 1
+  grid-area: 2 / 1 / span 7 / span 1;
 }
 
 .week {
   display: inline-block;
   color: $my-gray;
-//   margin: 20px 0 0 10px;
+  //   margin: 20px 0 0 10px;
 }
 
+.week::before {
+  width: 8px;
+  height: 8px;
+  background: $my-gray;
+  display: inline-block;
+  content: "";
+  margin: 0 15px 0 -19px;
+  border-radius: 50%;
+}
 
-.week:not(.week--current):hover{
-    color: $my-yellow;
+.week:not(.week--current):hover::before {
+  width: 8px;
+  height: 8px;
+  background: $my-yellow;
+  display: inline-block;
+  content: "";
+  margin: 0 15px 0 -19px;
+  border-radius: 50%;
+}
+
+.week--current::before {
+  width: 12px;
+  height: 12px;
+  background: $my-white;
+  display: inline-block;
+  content: "";
+  margin: 0 15px 0 -21px;
+  border-radius: 50%;
+}
+
+.week:not(.week--current):hover {
+  color: $my-yellow;
 }
 
 .week:not(.week--current):hover::after {
-    content: ":hover";
+  content: ":hover";
 }
 
 .week--current {
-    color: $my-white;
+  color: $my-white;
 }
 
 .week--current::after {
-    content: "-current";
+  content: "--current";
 }
 
-.week__link{
-    color: inherit;
-    text-decoration: none;
+.week__link {
+  color: inherit;
+  text-decoration: none;
 }
+
+.hidden {
+  display: none;
+}
+
+.right{
+    position: relative;
+}
+
+.form__input{
+    width: 80%;
+    position: absolute;
+    top: 20%;
+    margin-left: 10%;
+    border: none;
+    background: none;
+    border-bottom: 2px solid $my-gray;
+    font-family: montserrat;
+}
+
+.form__input:focus{
+    border-bottom: 2px solid $my-black;
+}
+
+.form__confirmation{
+    width: 150px;
+    height: 36px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    background: $my-gray;
+    border: none;
+    font-family: montserrat;
+    color: $my-white;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
