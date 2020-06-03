@@ -13,16 +13,21 @@ a {
 
 .body {
   background-color: #564e41;
+  height: 100%;
+  width: 100%; }
+
+.main {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%; }
 
-.main {
+.grid-container {
   display: grid;
   width: 80%; }
   @media (min-width: 950px) {
-    .main {
+    .grid-container {
       grid-template-columns: minmax(280px, 1fr) 2fr;
       width: 60%; } }
 
@@ -73,7 +78,7 @@ a {
   display: inline-block;
   color: #a6a6a6; }
 
-.week::before {
+.week__link::before {
   width: 8px;
   height: 8px;
   background: #a6a6a6;
@@ -82,7 +87,7 @@ a {
   margin: 0 15px 0 -19px;
   border-radius: 50%; }
 
-.week:not(.week--current):hover::before {
+.week__link:not(.week--current):hover::before {
   width: 8px;
   height: 8px;
   background: #c1c476;

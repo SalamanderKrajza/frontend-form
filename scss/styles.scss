@@ -24,13 +24,19 @@ a {
 
 .body {
   background-color: $bg-color;
+  height: 100%;
+  width: 100%;
+}
+
+.main{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
 
-.main {
+.grid-container {
   display: grid;
   width: 80%;
   @media (min-width: 950px) {
@@ -98,7 +104,7 @@ a {
   //   margin: 20px 0 0 10px;
 }
 
-.week::before {
+.week__link::before {
   width: 8px;
   height: 8px;
   background: $my-gray;
@@ -108,7 +114,7 @@ a {
   border-radius: 50%;
 }
 
-.week:not(.week--current):hover::before {
+.week__link:not(.week--current):hover::before {
   width: 8px;
   height: 8px;
   background: $my-yellow;
