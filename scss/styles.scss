@@ -6,6 +6,9 @@ $my-gray: #a6a6a6;
 $my-yellow: #c1c476;
 $my-green: #2fa522;
 
+//Used font
+$my-font: montserrat;
+
 html {
   box-sizing: border-box;
   height: 100%;
@@ -41,6 +44,7 @@ a {
   width: 80%;
   @media (min-width: 950px) {
     grid-template-columns: minmax(280px, 1fr) 2fr;
+    grid-template-rows: auto auto;
     width: 60%;
   }
 }
@@ -50,7 +54,7 @@ a {
 // }
 
 .left {
-  font-family: montserrat;
+  font-family: $my-font;
   font-variant: small-caps;
   color: $my-white;
   background: $my-black;
@@ -163,7 +167,7 @@ a {
     position: absolute;
     top: 20%;
     margin-left: 8%;
-    font-family: montserrat;
+    font-family: $my-font;
     font-weight: bold;
 }
 
@@ -172,7 +176,7 @@ a {
     top: 20%;
     right: 0;
     margin-right: 8%;
-    font-family: montserrat;
+    font-family: $my-font;
     font-weight: bold;
 }
 
@@ -180,7 +184,7 @@ a {
     position: absolute;
     top: 28%;
     margin: 0 10%;
-    font-family: montserrat;
+    font-family: $my-font;
     font-size: 16px;
     font-weight: normal;
 }
@@ -193,7 +197,7 @@ a {
     border: none;
     background: none;
     border-bottom: 2px solid $my-gray;
-    font-family: montserrat;
+    font-family: $my-font;
 }
 
 
@@ -209,7 +213,7 @@ a {
     right: 10%;
     background: $my-gray;
     border: none;
-    font-family: montserrat;
+    font-family: $my-font;
     color: $my-white;
     font-size: 16px;
     border-radius: 6px;
@@ -219,3 +223,24 @@ a {
     background: $my-green;
 }
 
+.right__header-box{
+  position: absolute;
+  //Left and top are equal 50% of size this element
+  left: -107px;
+  top: -43px;
+  background-color: $bg-color;
+  border: 2px solid $my-white;
+  padding: 16px;
+  margin: 0px;
+  font-family: $my-font;
+  color: $my-white;
+  font-weight: normal;
+  font-size: 18px;
+  font-variant: small-caps;
+}
+
+
+.bigger-text{
+  font-size: 26px;
+  letter-spacing: 6px;
+}

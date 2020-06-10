@@ -29,6 +29,7 @@ a {
   @media (min-width: 950px) {
     .grid-container {
       grid-template-columns: minmax(280px, 1fr) 2fr;
+      grid-template-rows: auto auto;
       width: 60%; } }
 
 .left {
@@ -174,3 +175,21 @@ a {
 
 .form:valid .form__confirmation {
   background: #2fa522; }
+
+.right__header-box {
+  position: absolute;
+  left: -107px;
+  top: -43px;
+  background-color: #564e41;
+  border: 2px solid #f6f6f6;
+  padding: 16px;
+  margin: 0px;
+  font-family: montserrat;
+  color: #f6f6f6;
+  font-weight: normal;
+  font-size: 18px;
+  font-variant: small-caps; }
+
+.bigger-text {
+  font-size: 26px;
+  letter-spacing: 6px; }
