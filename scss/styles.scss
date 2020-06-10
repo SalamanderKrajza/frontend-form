@@ -21,9 +21,9 @@ html {
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
-  }
+  color: inherit;
+  text-decoration: none;
+}
 
 .body {
   background-color: $bg-color;
@@ -31,7 +31,7 @@ a {
   width: 100%;
 }
 
-.main{
+.main {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -48,10 +48,6 @@ a {
     width: 60%;
   }
 }
-
-// .left * {
-//   background-color: #ffffff20;
-// }
 
 .left {
   font-family: $my-font;
@@ -74,122 +70,140 @@ a {
     height: 555px;
     padding: 36px 0 0 36px;
   }
-}
 
-.left__header {
-  font-weight: 400;
-  margin: 0;
-  font-size: 26px;
-  grid-area: 1 / 1 / span 1 / span 2;
+  &__header {
+    font-weight: 400;
+    margin: 0;
+    font-size: 26px;
+    grid-area: 1 / 1 / span 1 / span 2;
+  }
+
+  &__vertical-line {
+    background-color: $my-gray;
+    width: 2px;
+    height: 80%;
+    margin: -5px 0 0 10px;
+    vertical-align: top;
+    display: inline-block;
+    grid-area: 2 / 1 / span 7 / span 1;
+  }
 }
 
 .right {
   background: $my-white;
   height: 500px;
+  position: relative;
   //   border-radius: 0px 16px 16px 0px;
   @media (min-width: 950px) {
     height: 555px;
   }
+
+  &__header-box {
+    position: absolute;
+    //Left and top are equal 50% of size this element
+    left: -107px;
+    top: -43px;
+    background-color: $bg-color;
+    border: 2px solid $my-white;
+    padding: 16px;
+    margin: 0px;
+    font-family: $my-font;
+    color: $my-white;
+    font-weight: normal;
+    font-size: 18px;
+    font-variant: small-caps;
+  }
 }
 
-.left__vertical-line {
-  background-color: $my-gray;
-  width: 2px;
-  height: 80%;
-  margin: -5px 0 0 10px;
-  vertical-align: top;
-  display: inline-block;
-  grid-area: 2 / 1 / span 7 / span 1;
+.bigger-text {
+  font-size: 26px;
+  letter-spacing: 6px;
 }
 
 .week {
   display: inline-block;
   color: $my-gray;
   //   margin: 20px 0 0 10px;
-}
 
-.week__link::before {
-  width: 8px;
-  height: 8px;
-  background: $my-gray;
-  display: inline-block;
-  content: "";
-  margin: 0 15px 0 -19px;
-  border-radius: 50%;
-}
+  &__link::before {
+    width: 8px;
+    height: 8px;
+    background: $my-gray;
+    display: inline-block;
+    content: "";
+    margin: 0 15px 0 -19px;
+    border-radius: 50%;
+  }
 
-.week__link:not(.week--current):hover::before {
-  width: 8px;
-  height: 8px;
-  background: $my-yellow;
-  display: inline-block;
-  content: "";
-  margin: 0 15px 0 -19px;
-  border-radius: 50%;
-}
+  &__link:not(.week--current):hover::before {
+    width: 8px;
+    height: 8px;
+    background: $my-yellow;
+    display: inline-block;
+    content: "";
+    margin: 0 15px 0 -19px;
+    border-radius: 50%;
+  }
 
-.week--current::before {
-  width: 12px;
-  height: 12px;
-  background: $my-white;
-  display: inline-block;
-  content: "";
-  margin: 0 15px 0 -21px;
-  border-radius: 50%;
-}
+  &--current::before {
+    width: 12px;
+    height: 12px;
+    background: $my-white;
+    display: inline-block;
+    content: "";
+    margin: 0 15px 0 -21px;
+    border-radius: 50%;
+  }
 
-.week:not(.week--current):hover {
-  color: $my-yellow;
-}
+  &:not(.week--current):hover {
+    color: $my-yellow;
+  }
 
-.week:not(.week--current):hover::after {
-  content: ":hover";
-}
+  &:not(.week--current):hover::after {
+    content: ":hover";
+  }
 
-.week--current {
-  color: $my-white;
+  &--current {
+    color: $my-white;
+  }
+  
+  &--current::after {
+    content: "--current";
+  }
 }
-
-.week--current::after {
-  content: "--current";
-}
-
 
 .hidden {
   display: none;
 }
 
-.right{
-    position: relative;
-}
-
-.form__before-input{
+.form {
+  &__before-input {
     position: absolute;
     top: 20%;
     margin-left: 8%;
     font-family: $my-font;
     font-weight: bold;
-}
+  }
 
-.form__after-input{
+  &__after-input {
     position: absolute;
     top: 20%;
     right: 0;
     margin-right: 8%;
     font-family: $my-font;
     font-weight: bold;
-}
+  }
 
-.form__text{
+  &__text {
     position: absolute;
     top: 28%;
     margin: 0 10%;
     font-family: $my-font;
     font-size: 16px;
     font-weight: normal;
-}
+  }
 
-.form__input{
+  &__input {
     width: 80%;
     position: absolute;
     top: 20%;
@@ -198,14 +212,13 @@ a {
     background: none;
     border-bottom: 2px solid $my-gray;
     font-family: $my-font;
-}
+  }
 
-
-.form__input:focus{
+  &__input:focus {
     border-bottom: 2px solid $my-black;
-}
+  }
 
-.form__confirmation{
+  &__confirmation {
     width: 150px;
     height: 36px;
     position: absolute;
@@ -217,30 +230,9 @@ a {
     color: $my-white;
     font-size: 16px;
     border-radius: 6px;
-}
+  }
 
-.form:valid .form__confirmation{
+  &:valid &__confirmation {
     background: $my-green;
-}
-
-.right__header-box{
-  position: absolute;
-  //Left and top are equal 50% of size this element
-  left: -107px;
-  top: -43px;
-  background-color: $bg-color;
-  border: 2px solid $my-white;
-  padding: 16px;
-  margin: 0px;
-  font-family: $my-font;
-  color: $my-white;
-  font-weight: normal;
-  font-size: 18px;
-  font-variant: small-caps;
-}
-
-
-.bigger-text{
-  font-size: 26px;
-  letter-spacing: 6px;
+  }
 }
