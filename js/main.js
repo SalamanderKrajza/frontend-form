@@ -10,8 +10,8 @@ const weekNames = {
 };
 
 // temporary. It will be replaced later
-let current__week = 0;
-let current_question = 0;
+let currentWeek = 0;
+let currentQuestion = 0;
 
 //Data is separated by WEEKS (w1-w13)
 //Each WEEK have some questions (q1-qX)
@@ -82,7 +82,7 @@ let progressIndicator = document.querySelector(
 //get number of current week and current question from filename
 //we catching part "w1q8.html" by spliting url by "/", then removes .html and part after it
 // then split results to array
-[current__week, current_question] = location.href
+[currentWeek, currentQuestion] = location.href
   .split("/")
   .slice(-1)[0]
   .split(".")[0]
@@ -90,8 +90,8 @@ let progressIndicator = document.querySelector(
   .split("q");
 //Find how many questions have current week:
 try {
-  current__week__len = Object.keys(questionsData["w" + current__week]).length;
-  progressIndicator.innerHTML = `${weekNames[current__week]}: ${current_question}/${current__week__len}`;
+  currentWeekLen = Object.keys(questionsData["w" + currentWeek]).length;
+  progressIndicator.innerHTML = `${weekNames[currentWeek]}: ${currentQuestion}/${currentWeekLen}`;
 } catch (error) {
   console.log("this week probably does not exists in questionData");
 }
@@ -107,8 +107,8 @@ if (myWeeks.length > 0) {
   let listStart = 0;
   let listEnd = 0;
   //Find start of the list
-  if (current__week > 1) {
-    listStart = current__week - 1;
+  if (currentWeek > 1) {
+    listStart = currentWeek - 1;
   } else {
     listStart = 1;
   }
@@ -129,7 +129,7 @@ if (myWeeks.length > 0) {
   }
 
   //Highlight current week
-  myWeeks[current__week - 1].classList.add("week--current");
+  myWeeks[currentWeek - 1].classList.add("week--current");
 }
 
 //-----------------------------------Update question, href, description for each page
@@ -139,19 +139,19 @@ let formText = document.querySelector(".form__text");
 let form = document.querySelector(".form");
 
 formInput.pattern =
-  questionsData["w" + current__week]["q" + current_question]["p"];
+  questionsData["w" + currentWeek]["q" + currentQuestion]["p"];
 formText.innerHTML =
-  questionsData["w" + current__week]["q" + current_question]["d"];
+  questionsData["w" + currentWeek]["q" + currentQuestion]["d"];
 
 //If next question in current week exists then form should redirect to it
 if (
-  questionsData["w" + current__week]["q" + (parseInt(current_question) + 1)] !=
+  questionsData["w" + currentWeek]["q" + (parseInt(currentQuestion) + 1)] !=
   undefined
 ) {
   form.action =
-    "w" + current__week + "q" + (parseInt(current_question) + 1) + ".html";
+    "w" + currentWeek + "q" + (parseInt(currentQuestion) + 1) + ".html";
 }
 //If next question do not exists then form should redirect to next week
 else {
-  form.action = "w" + (parseInt(current__week) + 1) + "q" + 1 + ".html";
+  form.action = "w" + (parseInt(currentWeek) + 1) + "q" + 1 + ".html";
 }
