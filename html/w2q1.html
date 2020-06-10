@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="html/w1q1.html" rel="import" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
   </head>
   <body class="body">
     <main class="main">
@@ -14,9 +14,9 @@
         <div class="left">
           <div class="left__header">.week</div>
           <div class="left__vertical-line"></div>
-          <div class="week"><a class="week__link" href="./html/w1q1.html">.week__one</a></div>
-          <div class="week"><a class="week__link" href="">.week__two</a></div>
-          <div class="week"><a class="week__link" href="">.week__three</a></div>
+          <div class="week"><a class="week__link" href="./w1q1.html">.week__one</a></div>
+          <div class="week"><a class="week__link" href="./w2q1.html">.week__two</a></div>
+          <div class="week"><a class="week__link" href="./w1q3.html">.week__three</a></div>
           <div class="week"><a class="week__link" href="">.week__four</a></div>
           <div class="week"><a class="week__link" href="">.week__five</a></div>
           <div class="week"><a class="week__link" href="">.week__six</a></div>
@@ -52,13 +52,23 @@
       </div>
     </main>
     <script>
+      const weekNames = {
+          1:"week__one",
+          2:"week__two",
+          3:"week__three",
+          4:"week__four",
+          5:"week__fife",
+          6:"week__six",
+          7:"week__seven",
+          8:"week__eight",
+      }
       //Update indicator of current week/question:
       let progressIndicator = document.querySelector(".right__progress-indicator--js");
       //get number of current week and current question from filename
       //we catching part "w1q8.html" by spliting url by "/", then removes .html then split results to array
       let myResult = location.href.split("/").slice(-1)[0].replace(".html", "").split("w")[1].split("q")
       //In myResult[0] we have week number, in myResult[1] we have question number
-      progressIndicator.innerHTML = "week__one: 1/3";
+      progressIndicator.innerHTML = `${weekNames[myResult[0]]}: ${myResult[1]}/3`;
 
       //Navigation hide&display functionality
       let myWeeks = document.querySelectorAll(".week");
@@ -69,7 +79,7 @@
         });
 
         //Then decide which should be shown
-        let current__week = 1; // temporary. It will be replaced by queryString value
+        let current__week = myResult[0]; // temporary. It will be replaced by queryString value
         let listStart = 0;
         let listEnd = 0;
         //Find start of the list

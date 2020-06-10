@@ -73,6 +73,20 @@ a {
   @media (min-width: 950px) {
     .right {
       height: 555px; } }
+  .right__progress-indicator {
+    position: absolute;
+    font-family: montserrat;
+    font-variant: small-caps;
+    font-size: 18px;
+    letter-spacing: 2px; }
+    @media (min-width: 950px) {
+      .right__progress-indicator {
+        bottom: 5%;
+        right: 8%; } }
+    @media (min-width: 1170px) {
+      .right__progress-indicator {
+        bottom: 11%;
+        left: 8%; } }
   .right__header-box {
     position: absolute;
     left: -107px;
@@ -102,7 +116,7 @@ a {
     content: "";
     margin: 0 15px 0 -19px;
     border-radius: 50%; }
-  .week__link:not(.week--current):hover::before {
+  .left :not(.week--current) .week__link:hover::before {
     width: 8px;
     height: 8px;
     background: #c1c476;
@@ -110,7 +124,7 @@ a {
     content: "";
     margin: 0 15px 0 -19px;
     border-radius: 50%; }
-  .week--current::before {
+  .week--current .week__link::before {
     width: 12px;
     height: 12px;
     background: #f6f6f6;
@@ -171,7 +185,7 @@ a {
   height: 36px;
   position: absolute;
   bottom: 10%;
-  right: 10%;
+  right: 8%;
   background: #a6a6a6;
   border: none;
   font-family: montserrat;

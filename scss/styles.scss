@@ -98,6 +98,23 @@ a {
     height: 555px;
   }
 
+ &__progress-indicator
+ {
+   position: absolute;
+   font-family: $my-font;
+   font-variant: small-caps;
+   font-size: 18px;
+   letter-spacing: 2px;
+   @media (min-width: 950px) {
+    bottom: 5%;
+    right: 8%;
+    }
+   @media (min-width: 1170px) {
+   bottom: 11%;
+   left: 8%;
+   }
+ }
+
   &__header-box {
     position: absolute;
     //Left and top are equal 50% of size this element
@@ -135,7 +152,8 @@ a {
     border-radius: 50%;
   }
 
-  &__link:not(.week--current):hover::before {
+  //i dont know why next rule dont work when i remove .left class
+  .left :not(.week--current) &__link:hover::before {
     width: 8px;
     height: 8px;
     background: $my-yellow;
@@ -145,7 +163,7 @@ a {
     border-radius: 50%;
   }
 
-  &--current::before {
+  &--current &__link::before {
     width: 12px;
     height: 12px;
     background: $my-white;
@@ -223,7 +241,7 @@ a {
     height: 36px;
     position: absolute;
     bottom: 10%;
-    right: 10%;
+    right: 8%;
     background: $my-gray;
     border: none;
     font-family: $my-font;
