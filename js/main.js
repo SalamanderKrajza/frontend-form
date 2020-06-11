@@ -150,3 +150,7 @@ else {
   document.querySelector("input[name='w']").value = (parseInt(currentWeek) + 1);
   document.querySelector("input[name='q']").value = 1;
 }
+
+//-----------------Convert user input to small letters
+//Additional improvement for user experience
+formInput.onkeyup = function(){formInput.value=formInput.value.toLowerCase();}
