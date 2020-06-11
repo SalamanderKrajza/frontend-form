@@ -39,20 +39,23 @@ a {
   background: #202020;
   background-image: url("../img/cat-640x426.jpg");
   background-repeat: no-repeat;
-  background-size: auto 50%;
-  background-position: center bottom;
+  background-size: auto 80%;
+  background-position: right bottom;
   display: grid;
   grid-template-columns: 10px auto;
-  grid-template-rows: 40px repeat(6, 30px) 5px;
+  grid-template-rows: 40px repeat(6, 20px) 5px;
   grid-column-gap: 16px;
   grid-row-gap: 10px;
-  margin-top: 0;
-  height: 200px;
+  margin: 0;
+  height: 280px;
   padding: 16px; }
   @media (min-width: 950px) {
     .left {
       height: 555px;
-      padding: 36px 0 0 36px; } }
+      padding: 36px 0 0 36px;
+      background-size: auto 50%;
+      background-position: center bottom;
+      grid-template-rows: 40px repeat(6, 30px) 5px; } }
   .left__header {
     font-weight: 400;
     margin: 0;
@@ -66,45 +69,6 @@ a {
     vertical-align: top;
     display: inline-block;
     grid-area: 2 / 1 / span 7 / span 1; }
-
-.right {
-  background: #f6f6f6;
-  height: 500px;
-  position: relative; }
-  @media (min-width: 950px) {
-    .right {
-      height: 555px; } }
-  .right__progress-indicator {
-    position: absolute;
-    font-family: montserrat;
-    font-variant: small-caps;
-    font-size: 18px;
-    letter-spacing: 2px; }
-    @media (min-width: 950px) {
-      .right__progress-indicator {
-        bottom: 5%;
-        right: 8%; } }
-    @media (min-width: 1170px) {
-      .right__progress-indicator {
-        bottom: 11%;
-        left: 8%; } }
-  .right__header-box {
-    position: absolute;
-    left: -107px;
-    top: -43px;
-    background-color: #564e41;
-    border: 2px solid #f6f6f6;
-    padding: 16px;
-    margin: 0px;
-    font-family: montserrat;
-    color: #f6f6f6;
-    font-weight: normal;
-    font-size: 18px;
-    font-variant: small-caps; }
-
-.bigger-text {
-  font-size: 26px;
-  letter-spacing: 6px; }
 
 .week {
   display: inline-block;
@@ -144,6 +108,47 @@ a {
 
 .hidden {
   display: none; }
+
+.right {
+  background: #f6f6f6;
+  height: 500px;
+  position: relative; }
+  @media (min-width: 950px) {
+    .right {
+      height: 555px; } }
+  .right__progress-indicator {
+    position: absolute;
+    font-family: montserrat;
+    font-variant: small-caps;
+    font-size: 18px;
+    letter-spacing: 2px;
+    bottom: 5%;
+    right: 8%; }
+    @media (min-width: 475px) and (max-width: 950px), (min-width: 1175px) {
+      .right__progress-indicator {
+        bottom: 11%;
+        left: 8%; } }
+  .right__header-box {
+    position: absolute;
+    background-color: #564e41;
+    border: 2px solid #f6f6f6;
+    padding: 16px;
+    margin: 0px;
+    font-family: montserrat;
+    color: #f6f6f6;
+    font-weight: normal;
+    font-size: 18px;
+    font-variant: small-caps;
+    top: -43px;
+    right: 10px; }
+    @media (min-width: 950px) {
+      .right__header-box {
+        left: -107px;
+        right: auto; } }
+
+.bigger-text {
+  font-size: 26px;
+  letter-spacing: 6px; }
 
 .form__before-input {
   position: absolute;

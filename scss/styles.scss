@@ -56,20 +56,22 @@ a {
   background: $my-black;
   background-image: url("../img/cat-640x426.jpg");
   background-repeat: no-repeat;
-  background-size: auto 50%;
-  background-position: center bottom;
+  background-size: auto 80%;
+  background-position: right bottom;
   display: grid;
   grid-template-columns: 10px auto;
-  grid-template-rows: 40px repeat(6, 30px) 5px;
+  grid-template-rows: 40px repeat(6, 20px) 5px;
   grid-column-gap: 16px;
   grid-row-gap: 10px;
-  margin-top: 0;
-
-  height: 200px;
+  margin: 0;
+  height: 280px;
   padding: 16px;
   @media (min-width: 950px) {
     height: 555px;
     padding: 36px 0 0 36px;
+    background-size: auto 50%;
+    background-position: center bottom;
+    grid-template-rows: 40px repeat(6, 30px) 5px;
   }
 
   &__header {
@@ -90,58 +92,9 @@ a {
   }
 }
 
-.right {
-  background: $my-white;
-  height: 500px;
-  position: relative;
-  //   border-radius: 0px 16px 16px 0px;
-  @media (min-width: 950px) {
-    height: 555px;
-  }
-
- &__progress-indicator
- {
-   position: absolute;
-   font-family: $my-font;
-   font-variant: small-caps;
-   font-size: 18px;
-   letter-spacing: 2px;
-   @media (min-width: 950px) {
-    bottom: 5%;
-    right: 8%;
-    }
-   @media (min-width: 1170px) {
-   bottom: 11%;
-   left: 8%;
-   }
- }
-
-  &__header-box {
-    position: absolute;
-    //Left and top are equal 50% of size this element
-    left: -107px;
-    top: -43px;
-    background-color: $bg-color;
-    border: 2px solid $my-white;
-    padding: 16px;
-    margin: 0px;
-    font-family: $my-font;
-    color: $my-white;
-    font-weight: normal;
-    font-size: 18px;
-    font-variant: small-caps;
-  }
-}
-
-.bigger-text {
-  font-size: 26px;
-  letter-spacing: 6px;
-}
-
 .week {
   display: inline-block;
   color: $my-gray;
-  //   margin: 20px 0 0 10px;
 
   &__link::before {
     width: 8px;
@@ -194,6 +147,59 @@ a {
 .hidden {
   display: none;
 }
+
+
+.right {
+  background: $my-white;
+  height: 500px;
+  position: relative;
+  //   border-radius: 0px 16px 16px 0px;
+  @media (min-width: 950px) {
+    height: 555px;
+  }
+
+ &__progress-indicator
+ {
+   position: absolute;
+   font-family: $my-font;
+   font-variant: small-caps;
+   font-size: 18px;
+   letter-spacing: 2px;
+   bottom: 5%;
+   right: 8%;
+   @media (min-width: 475px) and (max-width: 950px), (min-width: 1175px) {
+    bottom: 11%;
+    left: 8%;
+  }
+ }
+
+  &__header-box {
+    position: absolute;
+    background-color: $bg-color;
+    border: 2px solid $my-white;
+    padding: 16px;
+    margin: 0px;
+    font-family: $my-font;
+    color: $my-white;
+    font-weight: normal;
+    font-size: 18px;
+    font-variant: small-caps;
+    //top is equal 50% of size this element
+    top: -43px;
+    right: 10px;
+   @media (min-width: 950px) {
+    //Left is equal 50% of size this element
+    left: -107px;
+    right: auto;
+   }
+  }
+}
+
+.bigger-text {
+  font-size: 26px;
+  letter-spacing: 6px;
+}
+
 
 .form {
   &__before-input {
