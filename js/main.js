@@ -154,3 +154,5 @@ else {
 //-----------------Convert user input to small letters
 //Additional improvement for user experience
 formInput.onkeyup = function(){formInput.value=formInput.value.toLowerCase();}
+
+//------------------Add hamburger functionality
