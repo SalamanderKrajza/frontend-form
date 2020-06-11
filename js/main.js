@@ -37,8 +37,7 @@ const questionsData = {
     },
     q3: {
       p: "main",
-      d:
-        "in this tag user should keep main content of the website",
+      d: "in this tag user should keep main content of the website",
     },
     q4: {
       p: "article",
@@ -54,8 +53,7 @@ const questionsData = {
   w3: {
     q1: {
       p: "b",
-      d:
-        "non-semantic tag used to make some text bold.",
+      d: "non-semantic tag used to make some text bold.",
     },
     q2: {
       p: "strong",
@@ -64,8 +62,7 @@ const questionsData = {
     },
     q3: {
       p: "i",
-      d:
-        "non-semantic tag used to change text display style italic.",
+      d: "non-semantic tag used to change text display style italic.",
     },
     q4: {
       p: "em",
@@ -79,15 +76,12 @@ const questionsData = {
 let progressIndicator = document.querySelector(
   ".right__progress-indicator--js"
 );
-//get number of current week and current question from filename
-//we catching part "w1q8.html" by spliting url by "/", then removes .html and part after it
-// then split results to array
+//get number of current week and current question from querystring
 [currentWeek, currentQuestion] = location.href
-  .split("/")
-  .slice(-1)[0]
-  .split(".")[0]
-  .split("w")[1]
-  .split("q");
+  .split("?")[1]
+  .replace("w=", "")
+  .replace("q=", "")
+  .split("&");
 //Find how many questions have current week:
 try {
   currentWeekLen = Object.keys(questionsData["w" + currentWeek]).length;
@@ -148,10 +142,11 @@ if (
   questionsData["w" + currentWeek]["q" + (parseInt(currentQuestion) + 1)] !=
   undefined
 ) {
-  form.action =
-    "w" + currentWeek + "q" + (parseInt(currentQuestion) + 1) + ".html";
+  document.querySelector("input[name='w']").value = currentWeek;
+  document.querySelector("input[name='q']").value = (parseInt(currentQuestion) + 1);
 }
 //If next question do not exists then form should redirect to next week
 else {
-  form.action = "w" + (parseInt(currentWeek) + 1) + "q" + 1 + ".html";
+  document.querySelector("input[name='w']").value = (parseInt(currentWeek) + 1);
+  document.querySelector("input[name='q']").value = 1;
 }

@@ -11,37 +11,39 @@
   <body class="body">
     <main class="main">
       <div class="grid-container">
-        <div class="left">
-          <div class="left__header">.week</div>
-          <div class="left__vertical-line"></div>
-          <div class="week">
-            <a class="week__link" href="./w1q1.html">.week__one</a>
-          </div>
-          <div class="week">
-            <a class="week__link" href="./w2q1.html">.week__two</a>
-          </div>
-          <div class="week">
-            <a class="week__link" href="./w3q1.html">.week__three</a>
-          </div>
-          <div class="week">
-            <a class="week__link" href="./w4q1.html">.week__four</a>
-          </div>
-          <div class="week">
-            <a class="week__link" href="./w5q1.html">.week__five</a>
-          </div>
-          <div class="week">
-            <a class="week__link" href="./w6q1.html">.week__six</a>
-          </div>
-          <div class="week">
-            <a class="week__link" href="./w7q1.html">.week__seven</a>
-          </div>
-        </div>
+        <nav>
+            <ul class="left">
+            <div class="left__header">.week</div>
+            <div class="left__vertical-line"></div>
+            <li class="week">
+                <a class="week__link" href="./quiz.html?w=1&q=1">.week__one</a>
+            </li>
+            <li class="week">
+                <a class="week__link" href="./quiz.html?w=2&q=1">.week__two</a>
+            </li>
+            <li class="week">
+                <a class="week__link" href="./quiz.html?w=3&q=1">.week__three</a>
+            </li>
+            <li class="week">
+                <a class="week__link" href="./quiz.html?w=4&q=1">.week__four</a>
+            </li>
+            <li class="week">
+                <a class="week__link" href="./quiz.html?w=5&q=1">.week__five</a>
+            </li>
+            <li class="week">
+                <a class="week__link" href="./quiz.html?w=6&q=1">.week__six</a>
+            </li>
+            <li class="week">
+                <a class="week__link" href="./quiz.html?w=7&q=1">.week__seven</a>
+            </li>
+            </ul>
+        </nav>
         <div class="right">
           <h1 class="right__header-box">
             <span class="bigger-text">frontend </span><br />
             related questions
           </h1>
-          <form action="" class="form">
+          <form action="" class="form" method="GET">
             <span class="form__wrapper">
               <label class="form__label">
                 <span class="form__before-input">&lt;</span>
@@ -58,7 +60,10 @@
                 </p>
               </label>
             </span>
-            <input class="form__confirmation" type="submit" value="NEXT" />
+            <input type="hidden" name="w" value="1" /> 
+            <input type="hidden" name="q" value="1" /> 
+            <input class="form__confirmation" type="submit" value="NEXT"/>
+            
           </form>
           <div
             class="right__progress-indicator right__progress-indicator--js"
@@ -67,5 +72,12 @@
       </div>
     </main>
     <script src="../js/main.js"></script>
+    <!-- <script>
+    let daSeting = 
+    function myScript() {
+      daSeting = 'frontend';
+    }
+    form.addEventListener("submit", myScript);
+    </script> -->
   </body>
 </html>
