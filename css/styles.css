@@ -23,16 +23,17 @@ a {
   align-items: center;
   height: 100%; }
 
-.grid-container {
+.main__grid-container {
   display: grid;
-  width: 80%; }
+  width: 80%;
+  max-height: 100%; }
   @media (min-width: 950px) {
-    .grid-container {
+    .main__grid-container {
       grid-template-columns: minmax(280px, 1fr) 2fr;
       grid-template-rows: auto auto;
       width: 60%; } }
 
-.nav {
+.left {
   font-family: montserrat;
   font-variant: small-caps;
   color: #f6f6f6;
@@ -43,12 +44,18 @@ a {
   background-position: right bottom;
   height: 280px; }
   @media (min-width: 950px) {
-    .nav {
+    .left {
       background-size: auto 50%;
       background-position: center bottom;
       height: 555px; } }
+  @media (max-width: 400px) {
+    .left {
+      height: 110px; } }
 
-.left {
+.left--open {
+  height: 350px; }
+
+.navigation {
   display: grid;
   grid-template-columns: 10px auto;
   grid-template-rows: 40px repeat(6, 20px) 5px;
@@ -57,15 +64,15 @@ a {
   margin: 0;
   padding: 16px; }
   @media (min-width: 950px) {
-    .left {
+    .navigation {
       padding: 36px 0 0 36px;
       grid-template-rows: 40px repeat(6, 30px) 5px; } }
-  .left__header {
+  .navigation__header {
     font-weight: 400;
     margin: 0;
     font-size: 26px;
     grid-area: 1 / 1 / span 1 / span 2; }
-  .left__vertical-line {
+  .navigation__vertical-line {
     background-color: #a6a6a6;
     width: 2px;
     height: 80%;
@@ -85,7 +92,7 @@ a {
     content: "";
     margin: 0 15px 0 -19px;
     border-radius: 50%; }
-  .left :not(.week--current) .week__link:hover::before {
+  .navigation :not(.week--current) .week__link:hover::before {
     width: 8px;
     height: 8px;
     background: #c1c476;
@@ -157,17 +164,23 @@ a {
 .form__before-input {
   position: absolute;
   top: 20%;
-  margin-left: 8%;
+  margin-left: 6%;
   font-family: montserrat;
   font-weight: bold; }
+  @media (max-width: 400px) {
+    .form__before-input {
+      margin-left: 3%; } }
 
 .form__after-input {
   position: absolute;
   top: 20%;
   right: 0;
-  margin-right: 8%;
+  margin-right: 6%;
   font-family: montserrat;
   font-weight: bold; }
+  @media (max-width: 400px) {
+    .form__after-input {
+      margin-right: 3%; } }
 
 .form__text {
   position: absolute;
@@ -208,16 +221,15 @@ a {
   background: #2fa522; }
 
 @media (max-width: 400px) {
-  .nav {
-    height: 110px; } }
-
-@media (max-width: 400px) {
-  .left__hidden {
+  .navigation__hidden {
     display: none; } }
 
-.left__hamburger-button {
+.navigation__hamburger-button {
   display: none;
-  margin: 16px; }
+  margin: 16px 0 -8px 16px; }
   @media (max-width: 400px) {
-    .left__hamburger-button {
+    .navigation__hamburger-button {
       display: block; } }
+
+.right--closed {
+  height: 300px; }

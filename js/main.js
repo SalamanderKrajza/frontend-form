@@ -156,3 +156,13 @@ else {
 formInput.onkeyup = function(){formInput.value=formInput.value.toLowerCase();}
 
 //------------------Add hamburger functionality
+function toggleHamburger() {
+  console.log('yeah');
+  document.querySelector('.navigation').classList.toggle("navigation__hidden");
+  document.querySelector('.left').classList.toggle("left--open");
+  document.querySelector('.right').classList.toggle("right.closed");
+
+}
+
+let myButton = document.querySelector('.navigation__hamburger-button--js');
+myButton.addEventListener("click", toggleHamburger);

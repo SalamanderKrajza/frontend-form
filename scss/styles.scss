@@ -39,9 +39,10 @@ a {
   height: 100%;
 }
 
-.grid-container {
+.main__grid-container {
   display: grid;
   width: 80%;
+  max-height: 100%;
   @media (min-width: 950px) {
     grid-template-columns: minmax(280px, 1fr) 2fr;
     grid-template-rows: auto auto;
@@ -49,7 +50,7 @@ a {
   }
 }
 
-.nav{
+.left{
   font-family: $my-font;
   font-variant: small-caps;
   color: $my-white;
@@ -62,12 +63,18 @@ a {
   @media (min-width: 950px) {
     background-size: auto 50%;
     background-position: center bottom;
-    
     height: 555px;
+  }
+  @media(max-width:400px){
+    height: 110px; //State when navigation is hidden
   }
 }
 
-.left {
+.left--open{
+  height: 350px; //State when navigation is shown
+}
+
+.navigation {
   display: grid;
   grid-template-columns: 10px auto;
   grid-template-rows: 40px repeat(6, 20px) 5px;
@@ -112,8 +119,8 @@ a {
     border-radius: 50%;
   }
 
-  //i dont know why next rule dont work when i remove .left class
-  .left :not(.week--current) &__link:hover::before {
+  //i dont know why next rule dont work when i remove .navigation class
+  .navigation :not(.week--current) &__link:hover::before {
     width: 8px;
     height: 8px;
     background: $my-yellow;
@@ -192,7 +199,7 @@ a {
     top: -43px;
     right: 10px;
     @media (min-width: 950px) {
-      //Left is equal 50% of size this element
+      //left is equal 50% of size this element
       left: -107px;
       right: auto;
     }
@@ -208,18 +215,24 @@ a {
   &__before-input {
     position: absolute;
     top: 20%;
-    margin-left: 8%;
+    margin-left: 6%;
     font-family: $my-font;
     font-weight: bold;
+    @media (max-width: 400px){
+      margin-left: 3%;
+    }
   }
 
   &__after-input {
     position: absolute;
     top: 20%;
     right: 0;
-    margin-right: 8%;
+    margin-right: 6%;
     font-family: $my-font;
     font-weight: bold;
+    @media (max-width: 400px){
+      margin-right: 3%;
+    }
   }
 
   &__text {
@@ -266,22 +279,21 @@ a {
   }
 }
 
-.nav{
-  @media(max-width:400px){
-    height: 110px;
-  }
-}
 
-.left__hidden {
+.navigation__hidden {
   @media (max-width: 400px) {
     display: none;
   }
 }
 
-.left__hamburger-button{
+.navigation__hamburger-button{
   display: none;
-  margin: 16px;
+  margin: 16px 0 -8px 16px;
   @media(max-width:400px){
     display: block;
   }
+}
+
+.right--closed{
+  height: 300px;
 }
