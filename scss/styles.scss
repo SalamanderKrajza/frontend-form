@@ -8,6 +8,8 @@ $my-green: #2fa522;
 
 //Used font
 $my-font: montserrat;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 
 html {
   box-sizing: border-box;
@@ -88,7 +90,6 @@ a {
   }
 
   &__header {
-    font-weight: 400;
     margin: 0;
     font-size: 26px;
     grid-area: 1 / 1 / span 1 / span 2;
