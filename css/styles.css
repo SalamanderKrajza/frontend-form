@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 html {
   box-sizing: border-box;
   height: 100%; }
@@ -68,7 +69,6 @@ a {
       padding: 36px 0 0 36px;
       grid-template-rows: 40px repeat(6, 30px) 5px; } }
   .navigation__header {
-    font-weight: 400;
     margin: 0;
     font-size: 26px;
     grid-area: 1 / 1 / span 1 / span 2; }
